@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "718065058020",
+    "firebase_url": "https://rosatomgame-3ef7c-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "rosatomgame-3ef7c",
+    "storage_bucket": "rosatomgame-3ef7c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:718065058020:android:5ed10a47a817891a3fecf1",
+        "android_client_info": {
+          "package_name": "ru.rosatom_academy.game"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "718065058020-r0e1do6t654285g9t4d5rq0hpuo7gl80.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4lpmZuwxYpvutLv-l-ifCMoSee0H3c_k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "718065058020-r0e1do6t654285g9t4d5rq0hpuo7gl80.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "718065058020-5t8qirkoo9rnau7hokg9oahet5qi2dr4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "ru.rosatom-academy.game.bacca"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

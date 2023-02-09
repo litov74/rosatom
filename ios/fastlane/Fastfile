@@ -1,0 +1,98 @@
+#update_fastlane
+
+require 'io/console'
+require 'git'
+require 'xxhash'
+default_platform(:ios)
+
+
+platform :ios do
+
+  @xcodeprojName = 'Runner'
+  @targetName = 'Runner'
+  @schemeName = 'Runner'
+  @export_method = 'app-store'
+  @configuration = 'Release'
+  @team = 'GM9L2CTZBU'
+
+  before_all do
+    bundle_install
+    ensure_bundle_exec
+    skip_docs
+    unlock_keychain(
+        path: "login",
+        password: "access"
+    )
+  end
+
+   desc "Produce"
+   lane :create_app do
+     produce
+   end
+
+
+   desc "Sign"
+   lane :sigh_app do
+     team_id("#{@team}")
+     cert
+     sigh(force: true)
+   end
+
+   desc "Public"
+   lane :distrib do
+     create_app
+     sigh_app
+     build
+   end
+
+   desc "Upload to App Store"
+   lane :upload do
+     team_id("#{@team}")
+     deliver
+   end
+
+  
+  lane :build do
+    #create_app
+    sigh_app
+    enable_automatic_code_signing
+    increment_build_number
+    xcclean(
+      workspace: "#{@xcodeprojName}.xcworkspace",
+      scheme: "#{@schemeName}" 
+      )
+
+    gym(
+      workspace: "#{@xcodeprojName}.xcworkspace",
+      output_directory: "./fastlane/builds",
+      output_name: "#{@targetName}",
+      export_method: "#{@export_method}",
+      configuration: "#{@configuration}",
+      scheme: "#{@schemeName}"
+    )
+
+  end
+
+  lane :versionBump do
+
+    flutter_version_manager(
+    arguments: "-code",
+    yml: "../version.yml",
+    pubspec: "../pubspec.yaml",
+    git_repo: "../"
+    )
+
+     flutter_version_manager(
+        arguments: "-apply",
+        yml: "../version.yml",
+        pubspec: "../pubspec.yaml",
+        git_repo: "../"
+        )
+
+  end
+
+
+end
+
+
+

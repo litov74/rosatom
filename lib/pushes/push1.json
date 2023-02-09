@@ -1,0 +1,10 @@
+{
+  "aps" : {
+    "alert" : {
+      "title" : "Push title",
+      "subtitle" : "Subtitle",
+      "body" : "Push body"
+    }
+  },
+  "gcm.message_id": "123"
+}

@@ -1,0 +1,66 @@
+name: rosatom_game
+publish_to: none
+
+version: 2.0.3+3
+
+
+
+dependencies:
+  cupertino_icons: ^1.0.0
+  device_info_plus: ^8.0.0
+  flutter:
+    sdk: flutter
+  flutter_local_notifications:
+    path: ../
+  flutter_timezone: ^1.0.4
+  path_provider: ^2.0.11
+  sqflite: ^2.0.2
+  provider: ^6.0.4
+  shared_preferences: ^2.0.15
+  auto_size_text: ^3.0.0
+  webview_flutter:
+  sensors: ^2.0.3
+
+dev_dependencies:
+  flutter_driver:
+    sdk: flutter
+  flutter_test:
+    sdk: flutter
+  integration_test:
+    sdk: flutter
+
+
+dependency_overrides:
+  flutter_local_notifications_linux:
+    path: ../../flutter_local_notifications_linux
+  flutter_local_notifications_platform_interface:
+    path: ../../flutter_local_notifications_platform_interface
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/images/deck_avatar_0.png
+    - assets/images/deck_avatar_1.png
+    - assets/images/deck_avatar_2.png
+    - assets/images/deck_avatar_3.png
+  fonts:
+    - family: Rosatom-Regular
+      fonts:
+        - asset: assets/fonts/Rosatom-Regular.ttf
+    - family: Rosatom-Bold
+      fonts:
+        - asset: assets/fonts/Rosatom-Bold.ttf
+    - family: CeraPro-Medium
+      fonts:
+        - asset: assets/fonts/CeraPro-Medium.ttf
+    - family: CeraPro-Bold
+      fonts:
+        - asset: assets/fonts/CeraPro-Bold.ttf
+    - family: CeraPro-Regular
+      fonts:
+        - asset: assets/fonts/CeraPro-Regular.ttf
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+  flutter: ">=2.8.0"

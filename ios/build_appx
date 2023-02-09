@@ -1,0 +1,1 @@
+xattr -cr Runner && flutter clean && flutter build ios --release --no-codesign && bundle exec fastlane build && bundle exec fastlane upload
